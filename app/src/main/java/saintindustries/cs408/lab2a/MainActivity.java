@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 import saintindustries.cs408.lab2a.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+    }
+    public void OnClickHelp(View v){
+        Random random = new Random();
+        int randomNumber;
+        randomNumber = random.nextInt(21);
+        String[] messages = getResources().getStringArray(R.array.helpMessages);
+
+        binding.message.setText(messages[randomNumber]);
+
+
     }
 }
 
